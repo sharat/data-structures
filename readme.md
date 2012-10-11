@@ -8,3 +8,7 @@
  - Merge Sort
  - Insertion sort
  - Quick Sort
+ 
+ 
+###
+Written using Notepad++ and PyScripter
