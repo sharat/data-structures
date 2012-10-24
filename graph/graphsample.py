@@ -1,3 +1,26 @@
+class Node:
+    def __init__(self):
+        self.id = str('');
+        self.neighbours = []
+
+class Edge:
+    def __init__(self, neighbor):
+        self.neighbor = neighbor
+
+class AdjacencyList:
+    def __init__(self):
+        self.innerlist = []
+
+    def getneighbor(index):
+        return innerlist[index]
+
+    def setneighbor(index, value):
+        innerlist[index] = value
+
+class NodeList:
+    def __init__(self):
+        self.data = []
+
 def find_path(graph, start, end, path=[]):
     path = path + [start]
     print path

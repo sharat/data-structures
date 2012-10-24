@@ -29,6 +29,8 @@ namespace assignment2_cs
             web.AddEdge(web.Nodes["100 Feet Road"], web.Nodes["Domlur Flyover"]);
             web.AddEdge(web.Nodes["Domlur Flyover"], web.Nodes["Victoria Road"]);
             web.AddEdge(web.Nodes["Victoria Road"], web.Nodes["Trinity"]);
+
+            web.Print();
         }
     }
 }

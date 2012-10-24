@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assignment2_cpp", "assignment2_cpp\assignment2_cpp.vcxproj", "{36F444D9-C1C0-4DC2-93A0-E28C1CA1531A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assignment2_cs", "assignment2_cs\assignment2_cs.csproj", "{DCDB18AC-9516-494B-9BDD-418FB384E182}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -25,16 +23,6 @@ Global
 		{36F444D9-C1C0-4DC2-93A0-E28C1CA1531A}.Release|Win32.ActiveCfg = Release|Win32
 		{36F444D9-C1C0-4DC2-93A0-E28C1CA1531A}.Release|Win32.Build.0 = Release|Win32
 		{36F444D9-C1C0-4DC2-93A0-E28C1CA1531A}.Release|x86.ActiveCfg = Release|Win32
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Debug|Win32.ActiveCfg = Debug|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Debug|x86.ActiveCfg = Debug|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Debug|x86.Build.0 = Debug|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Release|Mixed Platforms.Build.0 = Release|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Release|Win32.ActiveCfg = Release|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Release|x86.ActiveCfg = Release|x86
-		{DCDB18AC-9516-494B-9BDD-418FB384E182}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

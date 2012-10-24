@@ -1,31 +1,58 @@
 // assignment2_cpp.cpp : Defines the entry point for the console application.
 //
 
-#include <stdio.h>
-#include <tchar.h>
-#include <list>
+#include "common.h"
+#include <algorithm>
+
 using namespace std;
 
 class Vertex;
-typedef list<Vertex> ListVertex;
-
-enum Color
+class NodeList
 {
-	VIOLET, INDIGO, BLUE, GREEN, YELLOW, ORANGE, RED
-};
-
-char* ColorString[] = {  
-	"VIOLET", "INDIGO", "BLUE", "GREEN", "YELLOW", "ORANGE", "RED"
-};
-
-// Vertex class
-class Vertex
-{
-	int color;
-	int id;
-	list<Vertex> neighbours;
+	map<int, Vertex> nodes;
 
 public:
+	NodeList()
+	{
+
+	}
+
+	void Add(Vertex& n);
+	~NodeList()
+	{
+	}
+};
+
+class Adjacencylist;
+
+class Vertex {
+private:
+	int ID;
+	int color;
+	Adjacencylist* neighbors;
+
+public:
+	
+	Vertex() {
+		ID = 0;
+		color = 0;
+	}
+
+	Vertex(int id_in, int color_in = 0) {
+		ID = id_in;
+		color = color_in;
+	}
+
+	Vertex(int id_in, int color_in, Adjacencylist* neighbors_in) {
+		ID = id_in;
+		neighbors = neighbors_in;
+		color = color_in;
+	}
+
+	~Vertex()
+	{
+		delete neighbors;
+	}
 
 	int getColor() { 
 		return color;
@@ -36,44 +63,100 @@ public:
 	}
 	
 	int getID() {
-		return id;
+		return ID;
 	}
 
 	int setID(int id_in) {
-		return id;
-	}
-
-	Vertex()
-	{
-		setColor(0);
-		setID(0);
-		neighbours.clear();
-	}
-
-	Vertex(int id_in, int color_in, ListVertex& neighbors_in )
-	{
-		setColor(0);
-		setID(0);
-		neighbours = neighbors_in;
+		return ID;
 	}
 };
 
-class Graph
-{
+class Edge {
+	Vertex neighbor;
+
+public:
+
+	const Vertex& getNeighbor() {
+		return neighbor;
+	}
+
+	Edge(Vertex& neighbor_in) {
+		neighbor = neighbor_in;
+	}
+};
+
+class Adjacencylist {
+	std::vector<Edge> neighbors;
+
+public:
+
+	Adjacencylist(Edge e) {
+		neighbors.push_back(e);
+	}
+
+	Edge& operator[](int idx) {
+		neighbors[idx];
+	}
+
+	bool containsKey(int key)
+	{
+		
+	}
+};
+
+class Graph {
+	NodeList nodes;
 public:
 	// Creates an empty graph
-	static Graph createGraph();
-	static Graph addEdge(Graph g, Vertex v1, Vertex v2);
-	static Graph getNeigbours(Graph g, Vertex v);
-	static ListVertex getNeighbors(Graph g, Vertex v);
-	static Graph sortGraphbyDegree(Graph);
-
-private:
-
+	void createGraph();
+	void addEdge(Vertex v1, Vertex v2);
+	const Adjacencylist* getNeigbours (Vertex v);
+	void sortGraphbyDegree();
+	Color chooseColor(Vertex v);
+	int assignColors();
+	void print();
 };
 
-int main(int argc, char* argv[])
+void Graph::createGraph()
 {
+	
+}
+
+void Graph::addEdge(Vertex v1, Vertex v2)
+{
+	
+}
+
+const Adjacencylist* Graph::getNeigbours(Vertex v)
+{
+	return 0;
+}
+
+void Graph::sortGraphbyDegree()
+{
+
+}
+Color Graph::chooseColor(Vertex v)
+{
+	return RED;
+}
+int Graph::assignColors()
+{
+	return 0;
+}
+void print()
+{
+	return;
+}
+
+
+void NodeList::Add(Vertex& n)
+{
+	nodes[n.getID()] = n;
+}
+	
+
+int main(int argc, char* argv[]) {
 
 	return 0;
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text;
 
 namespace assignment2_cs
 {
@@ -55,14 +56,12 @@ namespace assignment2_cs
             base.InnerList.Add(e);
         }
 
-        public virtual EdgeToNeighbor this[string index]
+        public virtual EdgeToNeighbor this[int index]
         {
             get { return (EdgeToNeighbor)base.InnerList[index]; }
             set { base.InnerList[index] = value; }
         }
     }
-
-
 
     class Graph
     {
@@ -93,14 +92,65 @@ namespace assignment2_cs
             return null;
         }
 
+        void quickSort()
+        {
+            /*
+            def quick_sort(list):
+
+    if list == []:
+        return []
+
+    print list
+    pivot = list[0]
+
+    lesser = quick_sort([x for x in list[1:] if x < pivot])
+    greater = quick_sort([x for x in list[1:] if x >= pivot])
+    return lesser + [pivot] + greater*/
+        }
+
+        static void Swap<T>(ref T x, ref T y)
+        {
+            T z = x; x = y; y = z;
+        }
+
         public void SortGraphbyDegree()
         {
+            AdjacencyList newList = new AdjacencyList();
 
+            var sorted = from n in Nodes
+                         orderby n.Neighbors.Count descending
+                         select n;
+            Nodes = (AdjacencyList)sorted;
         }
 
         Color ChooseColor(Node n)
         {
             return Color.Blue;
+        }
+
+        static void PrintNodeList(NodeList list)
+        {
+            Console.WriteLine();
+            foreach (Node n in list)
+            {
+               Console.Write(" -> " + n.ID );
+            }
+        }
+        
+        public void Print()
+        {
+
+            foreach (Node node in Nodes)
+            {
+                StringBuilder display = new StringBuilder();
+
+                display.Append("(" + node.ID + ") : ");
+                foreach (EdgeToNeighbor e in node.Neighbours)
+                {
+                    display.Append(e.Neighbour.ID + ", ");
+                }
+                Console.WriteLine(display);
+            }
         }
     }
 
@@ -118,7 +168,7 @@ namespace assignment2_cs
             data.Remove(n.ID);
         }
 
-        public virtual bool ContainsKey(int key)
+        public virtual bool ContainsKey(string key)
         {
             return data.ContainsKey(key);
         }
