@@ -9,6 +9,8 @@
  - Insertion sort
  - Quick Sort
  
+## Graph
+ - This was an assignment to the college, I would like pulish this learning
  
 ###
-Written using Notepad++ and PyScripter
+Written using Notepad++, PyScripter, Aptana and Eclipse
