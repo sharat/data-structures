@@ -11,11 +11,11 @@ class AdjacencyList:
     def __init__(self):
         self.innerlist = []
 
-    def getneighbor(index):
-        return innerlist[index]
+    def getneighbor(self,index):
+        return self.innerlist[index]
 
-    def setneighbor(index, value):
-        innerlist[index] = value
+    def setneighbor(self,index, value):
+        self.innerlist[index] = value
 
 class NodeList:
     def __init__(self):
